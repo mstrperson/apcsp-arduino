@@ -1,6 +1,12 @@
 #ifndef __CSP_LED
 #define __CSP_LED
 
+#if defined(ARDUINO) && ARDUINO >= 100
+	#include <Arduino.h>
+#else
+	#include <WProgram.h>
+#endif
+
 class SimpleLed
 {
 	public:
