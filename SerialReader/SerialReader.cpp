@@ -61,6 +61,31 @@ int SerialReader::readInt()
 }
 
 /*
+ *  Reads a line from the Serial buffer and then converts it to an integer.
+ *  if a non-integer character is detected, returns 0.
+ */
+long SerialReader::readLong()
+{
+	long output = 0;
+	String str = this->readLine();
+	
+	for(int i = 0; i < str.length(); i++)
+	{
+		char ch = str[i];
+		
+		if(ch < '0' || ch > '9')
+		{
+			return 0;
+		}
+		
+		output *= 10;
+		output += (int)(ch - '0');
+	}
+	
+	return output;
+}
+
+/*
  *  Reads a line from the Serial buffer and then converts it to a float.
  *  if a non-integer character that is not a decimal point is detected, returns 0.
  */
@@ -98,3 +123,43 @@ float SerialReader::readFloat()
 	
 	return output;
 }
+
+/*
+ *  Reads a line from the Serial buffer and then converts it to a double.
+ *  if a non-integer character that is not a decimal point is detected, returns 0.
+ */
+double SerialReader::readDouble()
+{
+	double output = 0;
+	String str = this->readLine();
+	int power = 1;
+	bool doPower = false;
+	
+	for(int i = 0; i < str.length(); i++)
+	{
+		char ch = str[i];
+		
+		if(ch == '.')
+		{
+			doPower = true;
+			continue;
+		}
+		else if(ch < '0' || ch > '9')
+		{
+			return 0;
+		}
+		
+		output *= 10;
+		output += (int)(ch - '0');
+		
+		if(doPower)
+		{
+			power *= 10;
+		}
+	}
+	
+	output /= power;
+	
+	return output;
+}
+
