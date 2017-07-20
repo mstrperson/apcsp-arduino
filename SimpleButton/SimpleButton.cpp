@@ -1,5 +1,10 @@
 #include <SimpleButton.h>
 
+SimpleButton::SimpleButton()
+{
+	// nashi yo
+}
+
 SimpleButton::SimpleButton(int pin)
 {
 	this->pin = pin;

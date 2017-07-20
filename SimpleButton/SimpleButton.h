@@ -10,6 +10,7 @@
 class SimpleButton
 {
 	public:
+		SimpleButton();
 		SimpleButton(int pin);
 		bool isPressed();
 	private:
