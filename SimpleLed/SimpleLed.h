@@ -17,6 +17,7 @@ class SimpleLed
 		void off();
 		void setIntensity(float percentage);
 	private:
+		int pin;
 		bool isOn;
 		bool isDigital;
 		int intensity;
