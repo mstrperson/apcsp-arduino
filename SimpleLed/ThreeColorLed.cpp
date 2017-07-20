@@ -68,6 +68,8 @@ void ThreeColorLed::setColor(String hex)
 	red 	= hexToShort(hex[0], hex[1]);
 	green 	= hexToShort(hex[2], hex[3]);
 	blue 	= hexToShort(hex[4], hex[5]);
+	
+	on();
 }
 
 short ThreeColorLed::hexToShort(char a, char b)
