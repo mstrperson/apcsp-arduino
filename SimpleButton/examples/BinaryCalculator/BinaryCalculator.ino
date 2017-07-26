@@ -34,14 +34,14 @@ void loop()
 	// Convert the Decimal to Hex.
 	char firstDigit = hexDigits[num / 16];
 	char secondDigit = hexDigits[num % 16];
-	
-	// print the results to the command line.
+			
 	Serial.print("You have entered:  ");
 	Serial.println(num);
-	Serial.print("Hex:  ");
-	Serial.println("0x" + firstDigit + secondDigit);
+	Serial.print("hex:  "); 
+	Serial.print(firstDigit);
+	Serial.println(secondDigit);
 	
-	delay(5000);
+	delay(500);
 	
 	Serial.println("Press UPDATE to see a new value");
 }
