@@ -37,14 +37,14 @@ void ESC::calibrate()
 
 void ESC::setSpeed(float power)
 {
-	if(power == 0f)
+	if(power == 0)
 		myESC.writeMicroseconds(NEUTRAL);
-	else if(power >= 1f)
+	else if(power >= 1)
 		myESC.writeMicroseconds(MAX_SIGNAL);
-	else if(power <= -1f)
+	else if(power <= -1)
 		myESC.writeMicroseconds(MIN_SIGNAL);
 	
-	else if(power > 0f)
+	else if(power > 0)
 		myESC.writeMicroseconds(calculateForward(power));
 	else
 		myESC.writeMicroseconds(calculateReverse(power));
