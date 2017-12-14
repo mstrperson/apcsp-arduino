@@ -14,12 +14,12 @@ ESC::ESC(int pin, int freq)
 	myESC.attach(pin);
 }
 
-ESC::setMax(int max)
+void ESC::setMax(int max)
 {
 	MAX_SIGNAL = max;
 }
 
-ESC::setMin(int min)
+void ESC::setMin(int min)
 {
 	MIN_SIGNAL = min;
 }
