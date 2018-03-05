@@ -11,17 +11,16 @@ class SerialReader
 {
   public:
     SerialReader();
-	
-	// Reading Methods
+    // Reading Methods
     String readLine();
     int readInt();
     float readFloat();
-	double readDouble();
-	long readLong();
-	byte* readHex();
+    double readDouble();
+    long readLong();
+    byte* readHex();
 	
-	// Settings
-	void setUpdateInterval(int ms);
+    // Settings
+    void setUpdateInterval(int ms);
   private:
     int UPDATE_INTERVAL = 100; //ms
 };
